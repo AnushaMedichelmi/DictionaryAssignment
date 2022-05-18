@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         colliders = GetComponent<CapsuleCollider>();
-        //spawnManager = GameObject.Find("SpawnPosition").GetComponent<SpawnManager>();
+
       
     }
     // Update is called once per frame
@@ -62,15 +62,11 @@ public class PlayerController : MonoBehaviour
                 Instantiate(effect,spawnPoint.transform.position,Quaternion.identity);
                // audioSource.Play();
 
-              //  HitEnemy();
+            
 
             }
 
         }
-
-     
-
-
 
     }
     void FixedUpdate()
@@ -92,24 +88,6 @@ public class PlayerController : MonoBehaviour
         cam.transform.localRotation = camRotation * cam.transform.localRotation; // Rotation of the camera
 
     }
-
-   /* public void HitEnemy()
-    {
-        RaycastHit hit;
-        if (Physics.Raycast(bulletLaunch.position, bulletLaunch.forward, out hit, 100f))
-        {
-            GameObject hitEnemy = hit.collider.gameObject;
-            if (hitEnemy.gameObject.tag == "Enemy")
-            {
-                Destroy(hitEnemy);
-                print("Enemy hit");
-                hitEnemy.GetComponent<GameStateManager>().EnemyDead();
-            }
-        }
-
-    }*/
-
-   
 }
 
 
