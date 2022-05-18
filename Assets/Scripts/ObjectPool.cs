@@ -46,7 +46,7 @@ public class ObjectPool : MonoBehaviour
 
 		obj.SetActive(true);
 		float x = Random.Range(-8.4f,8.4f);
-		float z = Random.Range(6f,12.8f);
+		float z = Random.Range(-9f,0f);
 		obj.transform.position=obj.transform.position + new Vector3(x,0.0f,z);
 
 		return obj;
