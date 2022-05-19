@@ -33,6 +33,12 @@ public class PlayerController : MonoBehaviour
 
     public GameObject effect;
 
+    int ammo = 50;
+    public int health;
+    int maxAmmo = 100;
+    int maxMedical = 100;
+
+
 
 
 
@@ -87,6 +93,23 @@ public class PlayerController : MonoBehaviour
         transform.localRotation = playerRotation * transform.localRotation;
         cam.transform.localRotation = camRotation * cam.transform.localRotation; // Rotation of the camera
 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ammo")
+        {
+            ammo = Mathf.Clamp(ammo + 20, 0, maxAmmo);
+            Debug.Log("Collected ammo");
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "Medical")
+        {
+            health = Mathf.Clamp(health + 20, 0, maxMedical);
+            Debug.Log("Collected health");
+            Destroy(collision.gameObject);
+        }
     }
 }
 

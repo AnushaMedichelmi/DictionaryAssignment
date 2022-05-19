@@ -80,6 +80,7 @@ public class EnemyController : MonoBehaviour
             case STATE.DEATH:
                 TurnOffAllAnim();
                 animator.SetBool("isDead", true);
+                Debug.Log("Enemy dead");
                 break;
             default:
                 break;
